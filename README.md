@@ -1,2 +1,2 @@
 # Databricks-
-Dataset and code can be used by others by Me
+Feel Free to use the data as you please.
