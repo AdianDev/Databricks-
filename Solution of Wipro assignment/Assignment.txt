@@ -1,0 +1,26 @@
+Assignment 1:
+a. Read WS01.txt as a dataframe using a custom schema
+b. Verify that you are able to view all column values
+c. Save the dataframe as a delta table
+d. Create a delta table for storing Product data and perform incremental insert / update.
+
+Assignment 2:
+Create a delta table for storing Product data and perform incremental insert / update
+Steps Involved:
+Step1: Read Product.csv as a dataframe and save it as a delta table
+Step2: Read Product_delta.csv as a dataframe and perform an upsert transaction on the product delta
+table
+Step3: Verify that new records are inserted, and existing records are updated in the delta table
+
+Assignment 3:
+Load the data from multiple weather stations into Spark delta lake tables.
+Steps Involved:
+Step1: Create a folder and copy the weather history files from above link to a folder in databricks file
+system.
+Step2: Read the weather data files one at a time using streaming data read, ensuring one file is read per
+trigger. (Hint: use readstream with maxFilesPerTrigger = 1)
+Step3: Perform the following transformations
+a. Drop the following columns : record_min_temp_year, record_max_temp_year
+b. Filter out records with actual_precipitation = 0
+c. Create a new column deviation_from_avg = abs(actual_precipitation – avg_precipitation)
+Step4: Write the data to a weather delta table which is partitioned by year and month
